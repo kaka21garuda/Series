@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>704865806922-6j8qfv5a8id43rk525cbga8g39t466vu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.704865806922-6j8qfv5a8id43rk525cbga8g39t466vu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA-lOA5xsVgHbpynkIT3LH4pTNRrQ3jNTU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>704865806922</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kaka.Series</string>
+	<key>PROJECT_ID</key>
+	<string>series-e71fc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>series-e71fc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:704865806922:ios:1bf0a431a8b712e1</string>
+	<key>DATABASE_URL</key>
+	<string>https://series-e71fc.firebaseio.com</string>
+</dict>
+</plist>

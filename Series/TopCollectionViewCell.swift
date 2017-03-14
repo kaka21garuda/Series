@@ -14,13 +14,10 @@ class TopCollectionViewCell : UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     
-    
     var title: TitleSlide? {
-    
-       didSet {
+        didSet {
             self.updateUI()
         }
-        
     }
     
     private func updateUI() {
@@ -33,14 +30,14 @@ class TopCollectionViewCell : UICollectionViewCell {
 
             featuredImageView.image = nil
             titleLabel.text = nil
-        
         }
-    
     }
     
+    //MARK: -Laoyout Subview
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        // make the shadow effect
         self.layer.cornerRadius = 3.0
         layer.shadowRadius = 1.0
         layer.shadowOpacity = 0.8
