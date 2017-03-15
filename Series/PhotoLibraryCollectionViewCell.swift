@@ -10,12 +10,10 @@ import UIKit
 import Material
 
 class PhotoLibraryCollectionViewCell: CollectionViewCell {
-    
-    override func prepare() {
+    open override func prepare() {
         super.prepare()
         pulseColor = .white
         pulseAnimation = .backing
         contentsGravityPreset = .resizeAspectFill
     }
-
 }

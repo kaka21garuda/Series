@@ -20,12 +20,15 @@ PODS:
   - Material (2.4.16):
     - Material/Core (= 2.4.16)
   - Material/Core (2.4.16)
+  - Material/Photos (2.4.16):
+    - Material/Core
   - UPCarouselFlowLayout (1.1.1)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Material
+  - Material/Photos
   - UPCarouselFlowLayout
 
 SPEC CHECKSUMS:
@@ -38,6 +41,6 @@ SPEC CHECKSUMS:
   Material: 84645fb4c9409c3db76bd7c8e1fd00dc4a76c144
   UPCarouselFlowLayout: 02045c1505d63057fba3d9975be880a8d16bf17d
 
-PODFILE CHECKSUM: b3614364215234b93f7e9bc2b55d004bf41f687b
+PODFILE CHECKSUM: b973e78ed2f6e57a92bbb703715f7307cb83aeaa
 
 COCOAPODS: 1.2.0.rc.1

@@ -10,21 +10,18 @@ import UIKit
 import Material
 
 class AppToolbarController: ToolbarController {
-
-    override func prepare() {
+    open override func prepare() {
         super.prepare()
-        
         statusBarStyle = .default
-        prepareToolbar()
         
+        prepareToolbar()
     }
-    
-    func prepareToolbar() {
-    
+}
+
+extension AppToolbarController {
+    fileprivate func prepareToolbar() {
         toolbar.title = "Photo Library"
         toolbar.depthPreset = .none
         toolbar.dividerColor = Color.grey.lighten3
-    
     }
-    
 }

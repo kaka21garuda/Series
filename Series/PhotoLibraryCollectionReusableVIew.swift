@@ -10,18 +10,16 @@ import UIKit
 import Material
 
 class PhotoLibraryCollectionReusableView: CollectionReusableView {
-
-    var toolbar: Toolbar!
+    /// A reference to the toolbar.
+    private(set) var toolbar: Toolbar!
     
-    override func prepare() {
+    open override func prepare() {
         super.prepare()
-        
         prepareToolbar()
-        
     }
     
-    func prepareToolbar() {
-    
+    /// Prepares the toolbar.
+    private func prepareToolbar() {
         toolbar = Toolbar()
         toolbar.titleLabel.font = RobotoFont.regular(with: 14)
         toolbar.titleLabel.textAlignment = .left
@@ -30,7 +28,5 @@ class PhotoLibraryCollectionReusableView: CollectionReusableView {
         toolbar.depthPreset = .none
         toolbar.dividerColor = Color.grey.lighten3
         layout(toolbar).edges()
-    
     }
-
 }
