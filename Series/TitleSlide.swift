@@ -12,5 +12,6 @@ struct TitleSlide {
 
     var label: String
     var image: UIImage
+    
 
 }

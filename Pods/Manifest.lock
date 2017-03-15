@@ -17,11 +17,15 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - Material (2.4.16):
+    - Material/Core (= 2.4.16)
+  - Material/Core (2.4.16)
   - UPCarouselFlowLayout (1.1.1)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - Material
   - UPCarouselFlowLayout
 
 SPEC CHECKSUMS:
@@ -31,8 +35,9 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  Material: 84645fb4c9409c3db76bd7c8e1fd00dc4a76c144
   UPCarouselFlowLayout: 02045c1505d63057fba3d9975be880a8d16bf17d
 
-PODFILE CHECKSUM: 2373193af64583e40d3d94441abd1dea1fe3c2ce
+PODFILE CHECKSUM: b3614364215234b93f7e9bc2b55d004bf41f687b
 
 COCOAPODS: 1.2.0.rc.1
