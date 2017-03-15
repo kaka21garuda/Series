@@ -7,23 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class NewJournalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
+    
+    func realtime() {
+    
+    }
+    
     
 }
 
-//extension NewJournalViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 2
-//    }
-//    
-//    
-//
-//}

@@ -8,6 +8,8 @@
 
 import UIKit
 import UPCarouselFlowLayout
+import Material
+
 
 let title1 = TitleSlide(label: "Title 1", image: #imageLiteral(resourceName: "william-iven-19844"))
 let title2 = TitleSlide(label: "Title 2", image: #imageLiteral(resourceName: "william-iven-19843"))
@@ -19,6 +21,7 @@ class ViewController: UIViewController {
     
     
     let titles = [title1, title2, title3]
+    
     
     
     override func viewDidLoad() {
@@ -36,7 +39,7 @@ class ViewController: UIViewController {
         topCollectionView.delegate = self
         
     }
-
+    
 }
 
 //MARK: - CollectionView Data Source
@@ -56,7 +59,5 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         cell.title = titles[indexPath.item]
         return cell
     }
-
-
 }
 

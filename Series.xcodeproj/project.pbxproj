@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C617BFD91E789C620002C778 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C617BFD81E789C620002C778 /* GoogleService-Info.plist */; };
 		C61A59B31E78A12B003A3EBC /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A59B21E78A12B003A3EBC /* AddViewController.swift */; };
+		C63B42FB1E7A0146008268E8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B42FA1E7A0146008268E8 /* Post.swift */; };
 		C63EABDE1E78438300C8C4B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63EABDD1E78438300C8C4B2 /* AppDelegate.swift */; };
 		C63EABE01E78438300C8C4B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63EABDF1E78438300C8C4B2 /* ViewController.swift */; };
 		C63EABE31E78438300C8C4B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C63EABE11E78438300C8C4B2 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		6ED5B9D89E155A83851547C6 /* Pods-Series.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Series.release.xcconfig"; path = "Pods/Target Support Files/Pods-Series/Pods-Series.release.xcconfig"; sourceTree = "<group>"; };
 		C617BFD81E789C620002C778 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C61A59B21E78A12B003A3EBC /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		C63B42FA1E7A0146008268E8 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C63EABDA1E78438300C8C4B2 /* Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Series.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63EABDD1E78438300C8C4B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Series/AppDelegate.swift; sourceTree = "<group>"; };
 		C63EABDF1E78438300C8C4B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				C63EAC0D1E78593400C8C4B2 /* TitleSlide.swift */,
+				C63B42FA1E7A0146008268E8 /* Post.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				C68CE9D81E792AC200D0411F /* PhotoLibraryCollectionViewCell.swift in Sources */,
 				C68CE9D21E7926E000D0411F /* AppToolbarController.swift in Sources */,
 				C68CE9D61E7928FE00D0411F /* PhotoLibraryCollectionView.swift in Sources */,
+				C63B42FB1E7A0146008268E8 /* Post.swift in Sources */,
 				C68CE9CB1E78FAC700D0411F /* NewJournalViewController.swift in Sources */,
 				C68CE9CF1E7925B200D0411F /* PhotoLibraryViewController.swift in Sources */,
 				C68CE9CD1E78FB0F00D0411F /* TitleJournalCollectionCell.swift in Sources */,

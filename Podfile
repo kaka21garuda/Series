@@ -7,9 +7,10 @@ target 'Series' do
 
   # Pods for Series
   pod "UPCarouselFlowLayout"
-  pod 'Material'
+  pod 'Material', '~> 2.0'
   pod 'Material/Photos'
   pod 'Firebase/Core'
-  pod 'Firebase/Database'  
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
 end
