@@ -13,26 +13,19 @@ import Firebase
 
 class AddViewController: UIViewController {
     
-    var newArr = [String]()
-    
+    //MARK: - Firebase References
+    //Database reference
     var databaseRef = FIRDatabase.database().reference()
+    //Storage reference
     var storageRef = FIRStorage.storage().reference()
     
-    var point = 0
     
-    
-    
+    // Example of content
     var currPost = ["Tittle", #imageLiteral(resourceName: "data_science01"),"why not there is the nnnd ksksks lalalalal kdkdkdkdk kadsjfakl;", "whhhhhhalalallala"] as [Any]
     
-    
-    
-    
-    
+    //MARK: - Outlets and Actions
     @IBOutlet weak var uploadButton: UIButton!
-    
     @IBOutlet weak var progressView: UIProgressView!
-    
-    
     @IBAction func uploadAction(_ sender: Any) {
         
 //        let imagePicker = UIImagePickerController()
@@ -41,151 +34,69 @@ class AddViewController: UIViewController {
 //        imagePicker.delegate = self
 //        present(imagePicker, animated: true, completion: nil)
 
-         // objectDB()
-        //makeContentDict()
         
         makeObjectPost(title: "Third Post", imageTitle: #imageLiteral(resourceName: "william-iven-19844"), content: makeContentDict(contentPost: currPost))
-        
     }
     
+    //MARK: - Dictionary Content
     func makeContentDict(contentPost: [Any]) -> [String: AnyObject] {
         
         var onePost = [String: AnyObject]()
+        //Count will be the index of each content in order
         var count = 0
         
         for each in contentPost {
             count += 1
             if each is UIImage {
+                //When each is type UIImage,
+                //Convert each into Salada.File to be stored in FIRStorage
+                //Make a key-value pair
                 onePost["\(count)"] = returningImageData(image: each as! UIImage).name as AnyObject?
             } else if each is String {
+                //When each is type String,
+                //Make a key-value pair
                 onePost["\(count)"] = each as AnyObject?
             }
         }
-        
+        //return a dictionary from a given array. So that can be indexed in the future.
         return onePost
-        
     }
     
+    //MARK: - Make Object
     func makeObjectPost(title: String, imageTitle: UIImage, content: [String: AnyObject]) {
+        //Make a new post object
         let postObject = PostModel()
         postObject.title = title
         postObject.imageTitle = returningImageData(image: imageTitle)
         postObject.content = content
+        //Save the new object to firebase
         postObject.save { (ref, error) in
             if error != nil {
                 print(error?.localizedDescription)
             }
         }
-        
-        openURL()
-        print(postObject.imageTitle?.name)
-        
     }
     
-    func openURL() {
-        let imageURL = storageRef.child("1489698765552")
-        imageURL.downloadURL { (url, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else {
-                print("\n\n\nURL: \(url!)")
-            }
-        }
-    }
-    
-    func objectDB() {
-        
-        let anotherPost = PostModel()
-        anotherPost.title = "Second Post!"
-        anotherPost.content = ["1": "Four" as AnyObject, "2": "Six" as AnyObject, "3": "Nine" as AnyObject]
-//        anotherPost.imageTitle = returningImageData(image: #imageLiteral(resourceName: "data_science01"))
-//        anotherPost.save { (ref, error) in
-//            if error != nil {
-//                print(error?.localizedDescription)
-//            }
-//        }
-        
-        
-    }
-    
+    //MARK: - Convert Image File
+    //Extracting UIImage to convert it into Salada.File
     func returningImageData(image: UIImage) -> Salada.File {
         let data = UIImageJPEGRepresentation(image, 1)
         let file = Salada.File(data: data!)
         return file
     }
     
-    func uploadImage(image: UIImage, object: PostModel) {
-        
-        let data: Data = UIImageJPEGRepresentation(image, 1)!
-        let file: Salada.File = Salada.File(data: data)
-        object.imageTitle = file
-        
-        let task: FIRStorageUploadTask = object.imageTitle!.save { (metadata, error) in
-            if let error = error {
-                print(error)
-                return
-            }
-            }!
-        
-        
-    }
     
-    
-    func addingChildDatabaseExperiement() {
-        
-        
-        
-        for post in currPost {
-            if post is UIImage {
-                let imageData = UIImageJPEGRepresentation(post as! UIImage, 0.8)
-                returningImageMetadataString(data: imageData! as NSData)
-            }
-        }
-        
-        
-    }
-    
-    func returningImageMetadataString(data: NSData) {
-        
-        var urlString = ""
-        
-        
-        let imageName = NSUUID().uuidString
-        let storageRef = FIRStorage.storage().reference(withPath: "images/\(imageName).jpg")
-        let uploadMetadata = FIRStorageMetadata()
-        uploadMetadata.contentType = "image/jpeg"
-        let uploadTask = storageRef.put(data as Data, metadata: uploadMetadata) { (metadata, error) in
-            if error != nil {
-                print("I received error! \(error?.localizedDescription)")
-            } else {
-                urlString = String(describing: metadata?.downloadURL()!)
-                self.newArr.append(urlString)
-            }
-        }
-    }
-    
-    func storeImageDB(string: String) {
-        let key  = databaseRef.child("Posts").childByAutoId().key
-        
-        point += 1
-        
-        let dictionaryPost = ["\(point)": string]
-        
-        
-    }
-    
-    
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
     }
     
 }
 
+//MARK: - Image Picker
 extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //Dismiss the collection view when user chooses cancel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -195,20 +106,18 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
             dismiss(animated: true, completion: nil)
             return
         }
+        //if mediatype is type image.
         if mediaType == (kUTTypeImage as String) {
             if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
                 let imagedata = UIImageJPEGRepresentation(originalImage, 0.8)
-                //uploadImageToFirebaseStorage(data: imagedata! as NSData)
-                
             }
-            
         } else {
-            
+            // dismiss
             dismiss(animated: true, completion: nil)
             print("MOVIE IS NOT ALLWED")
             return
-            
         }
+        //dissmiss when everything is done
         dismiss(animated: true, completion: nil)
     }
 }
