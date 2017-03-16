@@ -18,6 +18,4 @@ class Post {
         self.title = title
         self.content = content
     }
-    
-
 }

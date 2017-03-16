@@ -11,7 +11,21 @@ import MobileCoreServices
 import Firebase
 
 class AddViewController: UIViewController {
-
+    
+    var newArr = [String]()
+    
+    var databaseRef = FIRDatabase.database().reference()
+    
+    var point = 0
+    
+    
+    
+    var currPost = [#imageLiteral(resourceName: "data_science01"), "Tittle", "why not there is the nnnd ksksks lalalalal kdkdkdkdk kadsjfakl;", #imageLiteral(resourceName: "william-iven-19844"), #imageLiteral(resourceName: "william-iven-19843"), "whhhhhhalalallala"] as [Any]
+    
+    
+    
+    
+    
     @IBOutlet weak var uploadButton: UIButton!
     
     @IBOutlet weak var progressView: UIProgressView!
@@ -19,15 +33,74 @@ class AddViewController: UIViewController {
     
     @IBAction func uploadAction(_ sender: Any) {
         
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = [kUTTypeImage as String]
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.sourceType = .photoLibrary
+//        imagePicker.mediaTypes = [kUTTypeImage as String]
+//        imagePicker.delegate = self
+//        present(imagePicker, animated: true, completion: nil)
+
+        objectDB()
         
     }
     
-    func uploadImageToFirebaseStorage(data: NSData) {
+    func objectDB() {
+        
+        let anotherPost = PostModel()
+        anotherPost.title = "First Post!"
+        anotherPost.content = ["One", "Two", "Three"]
+        anotherPost.imageTitle = returningImageData(image: #imageLiteral(resourceName: "data_science01"))
+        anotherPost.save { (ref, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
+        }
+        
+        
+        
+    }
+    
+    func returningImageData(image: UIImage) -> Salada.File {
+        let data = UIImageJPEGRepresentation(image, 1)
+        let file = Salada.File(data: data!)
+        return file
+    }
+    
+    func uploadImage(image: UIImage, object: PostModel) {
+        
+        let data: Data = UIImageJPEGRepresentation(image, 1)!
+        let file: Salada.File = Salada.File(data: data)
+        object.imageTitle = file
+        
+        let task: FIRStorageUploadTask = object.imageTitle!.save { (metadata, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            }!
+        
+        
+    }
+    
+    
+    func addingChildDatabaseExperiement() {
+        
+        
+        
+        for post in currPost {
+            if post is UIImage {
+                let imageData = UIImageJPEGRepresentation(post as! UIImage, 0.8)
+                returningImageMetadataString(data: imageData! as NSData)
+            }
+        }
+        
+        
+    }
+    
+    func returningImageMetadataString(data: NSData) {
+        
+        var urlString = ""
+        
+        
         let imageName = NSUUID().uuidString
         let storageRef = FIRStorage.storage().reference(withPath: "images/\(imageName).jpg")
         let uploadMetadata = FIRStorageMetadata()
@@ -36,21 +109,28 @@ class AddViewController: UIViewController {
             if error != nil {
                 print("I received error! \(error?.localizedDescription)")
             } else {
-                print("Metadata url \(metadata?.downloadURL())")
+                urlString = String(describing: metadata?.downloadURL()!)
+                self.newArr.append(urlString)
             }
         }
+    }
+    
+    func storeImageDB(string: String) {
+        let key  = databaseRef.child("Posts").childByAutoId().key
         
-        //Update the progress bar
-        uploadTask.observe(.progress) { [weak self] (snapshot) in
-            guard let stongself = self else {return}
-            guard let progress = snapshot.progress else {return}
-            stongself.progressView.progress = Float(progress.fractionCompleted)
-        }
+        point += 1
+        
+        let dictionaryPost = ["\(point)": string]
+        
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
     }
     
 }
@@ -69,12 +149,12 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
         if mediaType == (kUTTypeImage as String) {
             if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
                 let imagedata = UIImageJPEGRepresentation(originalImage, 0.8)
-                uploadImageToFirebaseStorage(data: imagedata! as NSData)
+                //uploadImageToFirebaseStorage(data: imagedata! as NSData)
                 
             }
             
         } else {
-        
+            
             dismiss(animated: true, completion: nil)
             print("MOVIE IS NOT ALLWED")
             return
@@ -82,7 +162,4 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    
-
 }
