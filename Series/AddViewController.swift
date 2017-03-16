@@ -10,17 +10,19 @@ import UIKit
 import MobileCoreServices
 import Firebase
 
+
 class AddViewController: UIViewController {
     
     var newArr = [String]()
     
     var databaseRef = FIRDatabase.database().reference()
+    var storageRef = FIRStorage.storage().reference()
     
     var point = 0
     
     
     
-    var currPost = [#imageLiteral(resourceName: "data_science01"), "Tittle", "why not there is the nnnd ksksks lalalalal kdkdkdkdk kadsjfakl;", #imageLiteral(resourceName: "william-iven-19844"), #imageLiteral(resourceName: "william-iven-19843"), "whhhhhhalalallala"] as [Any]
+    var currPost = ["Tittle", #imageLiteral(resourceName: "data_science01"),"why not there is the nnnd ksksks lalalalal kdkdkdkdk kadsjfakl;", "whhhhhhalalallala"] as [Any]
     
     
     
@@ -39,22 +41,69 @@ class AddViewController: UIViewController {
 //        imagePicker.delegate = self
 //        present(imagePicker, animated: true, completion: nil)
 
-        objectDB()
+         // objectDB()
+        //makeContentDict()
+        
+        makeObjectPost(title: "Third Post", imageTitle: #imageLiteral(resourceName: "william-iven-19844"), content: makeContentDict(contentPost: currPost))
         
     }
     
-    func objectDB() {
+    func makeContentDict(contentPost: [Any]) -> [String: AnyObject] {
         
-        let anotherPost = PostModel()
-        anotherPost.title = "First Post!"
-        anotherPost.content = ["One", "Two", "Three"]
-        anotherPost.imageTitle = returningImageData(image: #imageLiteral(resourceName: "data_science01"))
-        anotherPost.save { (ref, error) in
+        var onePost = [String: AnyObject]()
+        var count = 0
+        
+        for each in contentPost {
+            count += 1
+            if each is UIImage {
+                onePost["\(count)"] = returningImageData(image: each as! UIImage).name as AnyObject?
+            } else if each is String {
+                onePost["\(count)"] = each as AnyObject?
+            }
+        }
+        
+        return onePost
+        
+    }
+    
+    func makeObjectPost(title: String, imageTitle: UIImage, content: [String: AnyObject]) {
+        let postObject = PostModel()
+        postObject.title = title
+        postObject.imageTitle = returningImageData(image: imageTitle)
+        postObject.content = content
+        postObject.save { (ref, error) in
             if error != nil {
                 print(error?.localizedDescription)
             }
         }
         
+        openURL()
+        print(postObject.imageTitle?.name)
+        
+    }
+    
+    func openURL() {
+        let imageURL = storageRef.child("1489698765552")
+        imageURL.downloadURL { (url, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                print("\n\n\nURL: \(url!)")
+            }
+        }
+    }
+    
+    func objectDB() {
+        
+        let anotherPost = PostModel()
+        anotherPost.title = "Second Post!"
+        anotherPost.content = ["1": "Four" as AnyObject, "2": "Six" as AnyObject, "3": "Nine" as AnyObject]
+//        anotherPost.imageTitle = returningImageData(image: #imageLiteral(resourceName: "data_science01"))
+//        anotherPost.save { (ref, error) in
+//            if error != nil {
+//                print(error?.localizedDescription)
+//            }
+//        }
         
         
     }

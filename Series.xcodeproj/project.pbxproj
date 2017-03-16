@@ -21,11 +21,6 @@
 		C63EAC0E1E78593400C8C4B2 /* TitleSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63EAC0D1E78593400C8C4B2 /* TitleSlide.swift */; };
 		C68CE9CB1E78FAC700D0411F /* NewJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9CA1E78FAC700D0411F /* NewJournalViewController.swift */; };
 		C68CE9CD1E78FB0F00D0411F /* TitleJournalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9CC1E78FB0F00D0411F /* TitleJournalCollectionCell.swift */; };
-		C68CE9CF1E7925B200D0411F /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9CE1E7925B200D0411F /* PhotoLibraryViewController.swift */; };
-		C68CE9D21E7926E000D0411F /* AppToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9D11E7926E000D0411F /* AppToolbarController.swift */; };
-		C68CE9D41E79280700D0411F /* PhotoLibraryCollectionReusableVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9D31E79280700D0411F /* PhotoLibraryCollectionReusableVIew.swift */; };
-		C68CE9D61E7928FE00D0411F /* PhotoLibraryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9D51E7928FE00D0411F /* PhotoLibraryCollectionView.swift */; };
-		C68CE9D81E792AC200D0411F /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9D71E792AC200D0411F /* PhotoLibraryCollectionViewCell.swift */; };
 		C6D4AA2B1E7AED44000804F9 /* Referenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA271E7AED44000804F9 /* Referenceable.swift */; };
 		C6D4AA2C1E7AED44000804F9 /* Salada.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA281E7AED44000804F9 /* Salada.swift */; };
 		C6D4AA2D1E7AED44000804F9 /* Salada+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA291E7AED44000804F9 /* Salada+Datasource.swift */; };
@@ -75,11 +70,6 @@
 		C63EAC0D1E78593400C8C4B2 /* TitleSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSlide.swift; sourceTree = "<group>"; };
 		C68CE9CA1E78FAC700D0411F /* NewJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewJournalViewController.swift; sourceTree = "<group>"; };
 		C68CE9CC1E78FB0F00D0411F /* TitleJournalCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleJournalCollectionCell.swift; sourceTree = "<group>"; };
-		C68CE9CE1E7925B200D0411F /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
-		C68CE9D11E7926E000D0411F /* AppToolbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppToolbarController.swift; sourceTree = "<group>"; };
-		C68CE9D31E79280700D0411F /* PhotoLibraryCollectionReusableVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionReusableVIew.swift; sourceTree = "<group>"; };
-		C68CE9D51E7928FE00D0411F /* PhotoLibraryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionView.swift; sourceTree = "<group>"; };
-		C68CE9D71E792AC200D0411F /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6D4AA271E7AED44000804F9 /* Referenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Referenceable.swift; sourceTree = "<group>"; };
 		C6D4AA281E7AED44000804F9 /* Salada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Salada.swift; sourceTree = "<group>"; };
 		C6D4AA291E7AED44000804F9 /* Salada+Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Salada+Datasource.swift"; sourceTree = "<group>"; };
@@ -171,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				C6D4AA261E7AED2A000804F9 /* Salada */,
-				C68CE9D01E79265700D0411F /* PhotoLibrary */,
 				C61A59B11E78A0AB003A3EBC /* ViewControllers */,
 				C61A59B01E78A068003A3EBC /* CollectionCell */,
 				C61A59AF1E78A050003A3EBC /* Models */,
@@ -200,18 +189,6 @@
 				C63EABFF1E78438300C8C4B2 /* Info.plist */,
 			);
 			path = SeriesUITests;
-			sourceTree = "<group>";
-		};
-		C68CE9D01E79265700D0411F /* PhotoLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				C68CE9D11E7926E000D0411F /* AppToolbarController.swift */,
-				C68CE9D31E79280700D0411F /* PhotoLibraryCollectionReusableVIew.swift */,
-				C68CE9D51E7928FE00D0411F /* PhotoLibraryCollectionView.swift */,
-				C68CE9D71E792AC200D0411F /* PhotoLibraryCollectionViewCell.swift */,
-				C68CE9CE1E7925B200D0411F /* PhotoLibraryViewController.swift */,
-			);
-			name = PhotoLibrary;
 			sourceTree = "<group>";
 		};
 		C6D4AA261E7AED2A000804F9 /* Salada */ = {
@@ -435,18 +412,13 @@
 			files = (
 				C61A59B31E78A12B003A3EBC /* AddViewController.swift in Sources */,
 				C6D4AA2E1E7AED44000804F9 /* Salada+Relation.swift in Sources */,
-				C68CE9D81E792AC200D0411F /* PhotoLibraryCollectionViewCell.swift in Sources */,
 				C6D4AA301E7AED69000804F9 /* PostSalada.swift in Sources */,
 				C6D4AA2C1E7AED44000804F9 /* Salada.swift in Sources */,
-				C68CE9D21E7926E000D0411F /* AppToolbarController.swift in Sources */,
-				C68CE9D61E7928FE00D0411F /* PhotoLibraryCollectionView.swift in Sources */,
 				C63B42FB1E7A0146008268E8 /* Post.swift in Sources */,
 				C68CE9CB1E78FAC700D0411F /* NewJournalViewController.swift in Sources */,
-				C68CE9CF1E7925B200D0411F /* PhotoLibraryViewController.swift in Sources */,
 				C6D4AA2B1E7AED44000804F9 /* Referenceable.swift in Sources */,
 				C68CE9CD1E78FB0F00D0411F /* TitleJournalCollectionCell.swift in Sources */,
 				C63EAC0C1E78567100C8C4B2 /* TopCollectionViewCell.swift in Sources */,
-				C68CE9D41E79280700D0411F /* PhotoLibraryCollectionReusableVIew.swift in Sources */,
 				C63EABE01E78438300C8C4B2 /* ViewController.swift in Sources */,
 				C63EAC0E1E78593400C8C4B2 /* TitleSlide.swift in Sources */,
 				C6D4AA2D1E7AED44000804F9 /* Salada+Datasource.swift in Sources */,
