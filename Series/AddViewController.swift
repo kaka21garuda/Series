@@ -28,14 +28,14 @@ class AddViewController: UIViewController {
     }
     
     func uploadImageToFirebaseStorage(data: NSData) {
-        let storageRef = FIRStorage.storage().reference().child("images/demoPic.jpg")
+        let imageName = NSUUID().uuidString
+        let storageRef = FIRStorage.storage().reference(withPath: "images/\(imageName).jpg")
         let uploadMetadata = FIRStorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
         let uploadTask = storageRef.put(data as Data, metadata: uploadMetadata) { (metadata, error) in
             if error != nil {
                 print("I received error! \(error?.localizedDescription)")
             } else {
-                print("upload complete, here's some metadata. \(metadata)")
                 print("Metadata url \(metadata?.downloadURL())")
             }
         }

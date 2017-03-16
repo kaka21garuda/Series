@@ -14,6 +14,11 @@ import Material
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    override init() {
+        super.init()
+        FIRApp.configure()
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -21,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window!.rootViewController = AppToolbarController(rootViewController: PhotoLibraryViewController())
 //        window!.makeKeyAndVisible()
     
-        FIRApp.configure()
+//        FIRApp.configure()
         return true
     }
 

@@ -261,7 +261,33 @@
                     <view key="view" contentMode="scaleToFill" id="qbE-xk-JMW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEj-MR-AWy">
+                                <rect key="frame" x="191" y="252" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="VpQ-Mw-wjK"/>
+                                </constraints>
+                                <state key="normal" title="write"/>
+                                <connections>
+                                    <action selector="writeAction:" destination="UbL-sZ-WTd" eventType="touchUpInside" id="Y0z-82-rmV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-33-ueO">
+                                <rect key="frame" x="191" y="345" width="46" height="30"/>
+                                <state key="normal" title="read"/>
+                                <connections>
+                                    <action selector="readAction:" destination="UbL-sZ-WTd" eventType="touchUpInside" id="dem-3M-d36"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zvB-33-ueO" firstAttribute="leading" secondItem="qbE-xk-JMW" secondAttribute="leadingMargin" constant="175" id="1g3-lr-scm"/>
+                            <constraint firstItem="oEj-MR-AWy" firstAttribute="leading" secondItem="zvB-33-ueO" secondAttribute="leading" id="Q2c-0Q-gZI"/>
+                            <constraint firstItem="oEj-MR-AWy" firstAttribute="top" secondItem="CdJ-57-QNY" secondAttribute="bottom" constant="232" id="afW-24-pVX"/>
+                            <constraint firstItem="oEj-MR-AWy" firstAttribute="trailing" secondItem="zvB-33-ueO" secondAttribute="trailing" id="bil-zV-nC9"/>
+                            <constraint firstItem="zvB-33-ueO" firstAttribute="top" secondItem="oEj-MR-AWy" secondAttribute="bottom" constant="63" id="orf-za-9Tp"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36K-SE-jnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
