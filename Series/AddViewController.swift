@@ -21,9 +21,10 @@ class AddViewController: UIViewController {
     
     
     // Example of content
-    var currPost = ["Tittle", #imageLiteral(resourceName: "data_science01"),"why not there is the nnnd ksksks lalalalal kdkdkdkdk kadsjfakl;", "whhhhhhalalallala"] as [Any]
+    var currPost = ["Tittle", "why not there is the nnnd ksksks lalalalal kdkdkdkdk kadsjfakl;", "whhhhhhalalallala"] as [Any]
     
     //MARK: - Outlets and Actions
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
     @IBAction func uploadAction(_ sender: Any) {
@@ -35,9 +36,23 @@ class AddViewController: UIViewController {
 //        present(imagePicker, animated: true, completion: nil)
 
         
-        makeObjectPost(title: "Third Post", imageTitle: #imageLiteral(resourceName: "william-iven-19844"), content: makeContentDict(contentPost: currPost))
+        makeObjectPost(title: "Third Post", imageTitle: #imageLiteral(resourceName: "william-iven-19844"), content: makeContentDict(contentPost: currPost), like: 4)
     }
     
+   
+    @IBAction func readAction(_ sender: UIButton) {
+        read()
+    }
+    
+    //MARK: - ViewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}
+
+//MARK: - Write and Read
+extension AddViewController {
     //MARK: - Dictionary Content
     func makeContentDict(contentPost: [Any]) -> [String: AnyObject] {
         
@@ -63,38 +78,54 @@ class AddViewController: UIViewController {
     }
     
     //MARK: - Make Object
-    func makeObjectPost(title: String, imageTitle: UIImage, content: [String: AnyObject]) {
+    func makeObjectPost(title: String, imageTitle: UIImage, content: [String: AnyObject], like: Int) {
         //Make a new post object
         let postObject = PostModel()
         postObject.title = title
         postObject.imageTitle = returningImageData(image: imageTitle)
         postObject.content = content
+        postObject.like = String(like)
         //Save the new object to firebase
         postObject.save { (ref, error) in
             if error != nil {
                 print(error?.localizedDescription)
             }
+
         }
+        
     }
     
     //MARK: - Convert Image File
     //Extracting UIImage to convert it into Salada.File
     func returningImageData(image: UIImage) -> Salada.File {
+        //Convert the UIImage into JPEG as NSData
         let data = UIImageJPEGRepresentation(image, 1)
         let file = Salada.File(data: data!)
         return file
     }
     
+    func read() {
     
-    //MARK: - ViewDidLoad
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        databaseRef.child("v1/postmodel").queryOrderedByKey().observe(.childAdded, with: { (snapshot) in
+            
+            let value = snapshot.value! as! [String : AnyObject]
+            let content = value["content"]
+            let title = value["title"]
+            
+            print(content![3])
+            
+        })
+        
+        
     }
     
+    func readFIRDB() {
+        
+    }
 }
 
 //MARK: - Image Picker
-extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddViewController: UIImagePickerControllerDelegate {
     
     //Dismiss the collection view when user chooses cancel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -121,3 +152,5 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
         dismiss(animated: true, completion: nil)
     }
 }
+
+

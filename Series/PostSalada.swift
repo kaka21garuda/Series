@@ -15,7 +15,7 @@ class PostModel: Salada.Object {
     dynamic var title: String?
     dynamic var imageTitle: Salada.File?
     dynamic var content: [String: AnyObject]?
-
+    dynamic var like: String?
     
 
 }

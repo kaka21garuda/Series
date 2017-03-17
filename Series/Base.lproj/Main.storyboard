@@ -51,7 +51,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="216" height="128"/>
                                                     <subviews>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We love travelling" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-aj-HFl">
-                                                            <rect key="frame" x="8" y="54" width="200" height="21"/>
+                                                            <rect key="frame" x="8" y="54" width="200" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -61,6 +61,7 @@
                                                     <constraints>
                                                         <constraint firstItem="hNr-aj-HFl" firstAttribute="leading" secondItem="p4U-0R-3ZI" secondAttribute="leading" constant="8" id="T3U-5J-Qe8"/>
                                                         <constraint firstItem="hNr-aj-HFl" firstAttribute="centerY" secondItem="p4U-0R-3ZI" secondAttribute="centerY" id="VwR-ia-qOA"/>
+                                                        <constraint firstItem="hNr-aj-HFl" firstAttribute="centerX" secondItem="p4U-0R-3ZI" secondAttribute="centerX" id="iRO-Fg-aK3"/>
                                                         <constraint firstAttribute="trailing" secondItem="hNr-aj-HFl" secondAttribute="trailing" constant="8" id="vBO-ss-3qj"/>
                                                     </constraints>
                                                 </view>
@@ -136,18 +137,36 @@
                                     <action selector="uploadAction:" destination="Jvm-TL-cmx" eventType="touchUpInside" id="6fW-C1-DIz"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="glY-dj-mXa">
+                                <rect key="frame" x="67" y="78" width="240" height="168"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVL-It-Xga">
+                                <rect key="frame" x="164" y="409" width="46" height="30"/>
+                                <state key="normal" title="read"/>
+                                <connections>
+                                    <action selector="readAction:" destination="Jvm-TL-cmx" eventType="touchUpInside" id="4kQ-oC-Ef2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gVL-It-Xga" firstAttribute="top" secondItem="5tB-Ev-zj7" secondAttribute="bottom" constant="51" id="0IC-f7-Atc"/>
                             <constraint firstItem="4sd-e8-xJb" firstAttribute="centerX" secondItem="UCm-Mi-EiS" secondAttribute="centerX" id="4HF-qg-dWN"/>
                             <constraint firstItem="Ori-vO-to3" firstAttribute="top" secondItem="4sd-e8-xJb" secondAttribute="bottom" constant="319" id="BNY-zU-KAW"/>
+                            <constraint firstItem="gVL-It-Xga" firstAttribute="leading" secondItem="UCm-Mi-EiS" secondAttribute="leadingMargin" constant="148" id="EQV-e0-ayo"/>
+                            <constraint firstItem="gVL-It-Xga" firstAttribute="centerX" secondItem="5tB-Ev-zj7" secondAttribute="centerX" id="K1E-cH-407"/>
                             <constraint firstItem="5tB-Ev-zj7" firstAttribute="leading" secondItem="UCm-Mi-EiS" secondAttribute="leadingMargin" constant="42" id="Ldt-Hf-Cac"/>
                             <constraint firstItem="4sd-e8-xJb" firstAttribute="top" secondItem="CDq-K0-v5e" secondAttribute="bottom" constant="298" id="Q0c-WU-eyL"/>
                             <constraint firstItem="4sd-e8-xJb" firstAttribute="centerX" secondItem="5tB-Ev-zj7" secondAttribute="centerX" id="VQ2-de-uyg"/>
+                            <constraint firstItem="glY-dj-mXa" firstAttribute="centerX" secondItem="4sd-e8-xJb" secondAttribute="centerX" id="WNg-NI-ANk"/>
+                            <constraint firstItem="glY-dj-mXa" firstAttribute="top" secondItem="CDq-K0-v5e" secondAttribute="bottom" constant="58" id="aeM-IN-Sj7"/>
                             <constraint firstItem="5tB-Ev-zj7" firstAttribute="top" secondItem="4sd-e8-xJb" secondAttribute="bottom" constant="8" symbolic="YES" id="i24-Vh-qHG"/>
+                            <constraint firstItem="glY-dj-mXa" firstAttribute="leading" secondItem="UCm-Mi-EiS" secondAttribute="leadingMargin" constant="51" id="iJA-N0-zVj"/>
+                            <constraint firstItem="4sd-e8-xJb" firstAttribute="top" secondItem="glY-dj-mXa" secondAttribute="bottom" constant="72" id="v8j-ll-cGu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="glY-dj-mXa" id="XQs-ON-ZkP"/>
                         <outlet property="progressView" destination="5tB-Ev-zj7" id="sL5-bz-3Vb"/>
                         <outlet property="uploadButton" destination="4sd-e8-xJb" id="22n-vu-yZN"/>
                     </connections>
@@ -199,6 +218,11 @@
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2o-VU-EZr">
+                                                            <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                 </view>

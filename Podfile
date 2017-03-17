@@ -13,5 +13,6 @@ target 'Series' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
+  pod 'FirebaseUI/Storage', '~> 3.0'
 
 end
