@@ -12,6 +12,8 @@ class TopCollectionViewCell : UICollectionViewCell {
 
     @IBOutlet weak var featuredImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var loveImage: UIImageView!
     
     
     var title: TitleSlide? {
@@ -33,7 +35,7 @@ class TopCollectionViewCell : UICollectionViewCell {
         }
     }
     
-    //MARK: -Laoyout Subview
+    //MARK: - Layout Subview
     override func layoutSubviews() {
         super.layoutSubviews()
         

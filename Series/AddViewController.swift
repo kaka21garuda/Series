@@ -112,7 +112,7 @@ extension AddViewController {
             let content = value["content"]
             let title = value["title"]
             
-            print(content![3])
+            print(content![0])
             
         })
         

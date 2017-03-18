@@ -19,13 +19,12 @@
 		C63EABFE1E78438300C8C4B2 /* SeriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63EABFD1E78438300C8C4B2 /* SeriesUITests.swift */; };
 		C63EAC0C1E78567100C8C4B2 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63EAC0B1E78567100C8C4B2 /* TopCollectionViewCell.swift */; };
 		C63EAC0E1E78593400C8C4B2 /* TitleSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63EAC0D1E78593400C8C4B2 /* TitleSlide.swift */; };
-		C68CE9CB1E78FAC700D0411F /* NewJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9CA1E78FAC700D0411F /* NewJournalViewController.swift */; };
-		C68CE9CD1E78FB0F00D0411F /* TitleJournalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68CE9CC1E78FB0F00D0411F /* TitleJournalCollectionCell.swift */; };
 		C6D4AA2B1E7AED44000804F9 /* Referenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA271E7AED44000804F9 /* Referenceable.swift */; };
 		C6D4AA2C1E7AED44000804F9 /* Salada.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA281E7AED44000804F9 /* Salada.swift */; };
 		C6D4AA2D1E7AED44000804F9 /* Salada+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA291E7AED44000804F9 /* Salada+Datasource.swift */; };
 		C6D4AA2E1E7AED44000804F9 /* Salada+Relation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA2A1E7AED44000804F9 /* Salada+Relation.swift */; };
 		C6D4AA301E7AED69000804F9 /* PostSalada.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4AA2F1E7AED69000804F9 /* PostSalada.swift */; };
+		C6EA1B281E7CF393007E9F1F /* NewTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA1B271E7CF393007E9F1F /* NewTopicCell.swift */; };
 		D99770A8DCD5EF0171A088B8 /* Pods_Series.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AF5B48F6EA530179D5B070 /* Pods_Series.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,13 +67,12 @@
 		C63EABFF1E78438300C8C4B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C63EAC0B1E78567100C8C4B2 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		C63EAC0D1E78593400C8C4B2 /* TitleSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSlide.swift; sourceTree = "<group>"; };
-		C68CE9CA1E78FAC700D0411F /* NewJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewJournalViewController.swift; sourceTree = "<group>"; };
-		C68CE9CC1E78FB0F00D0411F /* TitleJournalCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleJournalCollectionCell.swift; sourceTree = "<group>"; };
 		C6D4AA271E7AED44000804F9 /* Referenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Referenceable.swift; sourceTree = "<group>"; };
 		C6D4AA281E7AED44000804F9 /* Salada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Salada.swift; sourceTree = "<group>"; };
 		C6D4AA291E7AED44000804F9 /* Salada+Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Salada+Datasource.swift"; sourceTree = "<group>"; };
 		C6D4AA2A1E7AED44000804F9 /* Salada+Relation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Salada+Relation.swift"; sourceTree = "<group>"; };
 		C6D4AA2F1E7AED69000804F9 /* PostSalada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSalada.swift; sourceTree = "<group>"; };
+		C6EA1B271E7CF393007E9F1F /* NewTopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTopicCell.swift; sourceTree = "<group>"; };
 		E1AF5B48F6EA530179D5B070 /* Pods_Series.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Series.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAEE96820F891BA8AEF3190 /* Pods-Series.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Series.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Series/Pods-Series.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C63EAC0B1E78567100C8C4B2 /* TopCollectionViewCell.swift */,
-				C68CE9CC1E78FB0F00D0411F /* TitleJournalCollectionCell.swift */,
+				C6EA1B271E7CF393007E9F1F /* NewTopicCell.swift */,
 			);
 			name = CollectionCell;
 			sourceTree = "<group>";
@@ -129,7 +127,6 @@
 			children = (
 				C63EABDF1E78438300C8C4B2 /* ViewController.swift */,
 				C61A59B21E78A12B003A3EBC /* AddViewController.swift */,
-				C68CE9CA1E78FAC700D0411F /* NewJournalViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -412,12 +409,11 @@
 			files = (
 				C61A59B31E78A12B003A3EBC /* AddViewController.swift in Sources */,
 				C6D4AA2E1E7AED44000804F9 /* Salada+Relation.swift in Sources */,
+				C6EA1B281E7CF393007E9F1F /* NewTopicCell.swift in Sources */,
 				C6D4AA301E7AED69000804F9 /* PostSalada.swift in Sources */,
 				C6D4AA2C1E7AED44000804F9 /* Salada.swift in Sources */,
 				C63B42FB1E7A0146008268E8 /* Post.swift in Sources */,
-				C68CE9CB1E78FAC700D0411F /* NewJournalViewController.swift in Sources */,
 				C6D4AA2B1E7AED44000804F9 /* Referenceable.swift in Sources */,
-				C68CE9CD1E78FB0F00D0411F /* TitleJournalCollectionCell.swift in Sources */,
 				C63EAC0C1E78567100C8C4B2 /* TopCollectionViewCell.swift in Sources */,
 				C63EABE01E78438300C8C4B2 /* ViewController.swift in Sources */,
 				C63EAC0E1E78593400C8C4B2 /* TitleSlide.swift in Sources */,
