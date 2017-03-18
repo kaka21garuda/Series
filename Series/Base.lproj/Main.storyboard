@@ -145,6 +145,7 @@
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-zH-2GC">
                                                                             <rect key="frame" x="8" y="79" width="20" height="20"/>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="height" constant="20" id="rw0-Fg-g7C"/>
                                                                                 <constraint firstAttribute="width" constant="20" id="x2D-J8-FIe"/>
                                                                             </constraints>
                                                                         </imageView>
@@ -169,12 +170,14 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="height" constant="107" id="IFG-Oh-SQI"/>
                                                                         <constraint firstItem="EH2-IH-Jie" firstAttribute="top" secondItem="dOE-X8-8jR" secondAttribute="top" constant="8" id="Kb3-Tc-snR"/>
                                                                         <constraint firstItem="7qa-zH-2GC" firstAttribute="leading" secondItem="dOE-X8-8jR" secondAttribute="leading" constant="8" id="QAZ-yG-yaI"/>
                                                                         <constraint firstItem="EH2-IH-Jie" firstAttribute="leading" secondItem="dOE-X8-8jR" secondAttribute="leading" constant="8" id="Qgy-Be-0tM"/>
                                                                         <constraint firstItem="7qa-zH-2GC" firstAttribute="top" secondItem="iYY-Ec-8Uw" secondAttribute="top" id="bht-ZX-ra2"/>
                                                                         <constraint firstAttribute="bottom" secondItem="7qa-zH-2GC" secondAttribute="bottom" constant="8" id="bw5-s0-AIW"/>
                                                                         <constraint firstAttribute="trailing" secondItem="EH2-IH-Jie" secondAttribute="trailing" constant="8" id="fpK-ID-DkT"/>
+                                                                        <constraint firstAttribute="width" constant="124" id="kHL-Gp-Lrr"/>
                                                                         <constraint firstAttribute="bottom" secondItem="iYY-Ec-8Uw" secondAttribute="bottom" constant="7" id="mQz-nf-uYB"/>
                                                                         <constraint firstItem="7qa-zH-2GC" firstAttribute="top" secondItem="dOE-X8-8jR" secondAttribute="top" constant="79" id="oFX-BF-kIq"/>
                                                                         <constraint firstItem="iYY-Ec-8Uw" firstAttribute="leading" secondItem="7qa-zH-2GC" secondAttribute="trailing" constant="8" id="vpP-u6-Mmp"/>
@@ -251,56 +254,146 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5tB-Ev-zj7">
-                                <rect key="frame" x="58" y="356" width="259" height="2"/>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sd-e8-xJb">
-                                <rect key="frame" x="152" y="318" width="71" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7L-06-rrr">
+                                <rect key="frame" x="305" y="28" width="54" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="5sr-BH-vJd"/>
+                                    <constraint firstAttribute="width" constant="54" id="aP9-AL-M1P"/>
                                 </constraints>
-                                <state key="normal" title="Upload"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="dividerThickness">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <state key="normal" title="Publish"/>
                                 <connections>
-                                    <action selector="uploadAction:" destination="Jvm-TL-cmx" eventType="touchUpInside" id="6fW-C1-DIz"/>
+                                    <action selector="publishAction:" destination="Jvm-TL-cmx" eventType="touchUpInside" id="Ct2-Xo-8Wu"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="glY-dj-mXa">
-                                <rect key="frame" x="67" y="78" width="240" height="168"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVL-It-Xga">
-                                <rect key="frame" x="164" y="409" width="46" height="30"/>
-                                <state key="normal" title="read"/>
-                                <connections>
-                                    <action selector="readAction:" destination="Jvm-TL-cmx" eventType="touchUpInside" id="4kQ-oC-Ef2"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x4z-YQ-Rmn">
+                                <rect key="frame" x="0.0" y="83" width="375" height="528"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pn7-ST-7Jp">
+                                    <size key="itemSize" width="271" height="505"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageTitle" id="oeZ-K9-Ppi" customClass="ImageOnlyCell" customModule="Series" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12" width="271" height="505"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="271" height="505"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wGG-Ig-Cvn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="271" height="505"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvf-sw-zz6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="271" height="505"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9U-Yf-pNi">
+                                                            <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="46" id="mA8-V7-Nbc"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Edit">
+                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="0.94908497431506844" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="editAction:" destination="oeZ-K9-Ppi" eventType="touchUpInside" id="xP4-Cr-lt4"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Tr-yS-jwO">
+                                                            <rect key="frame" x="15" y="162" width="240" height="128"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="128" id="urx-9x-JcO"/>
+                                                            </constraints>
+                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="3Tr-yS-jwO" firstAttribute="leading" secondItem="wvf-sw-zz6" secondAttribute="leading" constant="15" id="M2r-9S-oCb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3Tr-yS-jwO" secondAttribute="trailing" constant="16" id="Vre-yr-EQc"/>
+                                                        <constraint firstItem="3Tr-yS-jwO" firstAttribute="top" secondItem="wvf-sw-zz6" secondAttribute="top" constant="162" id="noS-w4-SfF"/>
+                                                        <constraint firstItem="3Tr-yS-jwO" firstAttribute="centerX" secondItem="wvf-sw-zz6" secondAttribute="centerX" id="p7N-Ov-GF3"/>
+                                                        <constraint firstItem="X9U-Yf-pNi" firstAttribute="top" secondItem="wvf-sw-zz6" secondAttribute="top" constant="8" id="qzR-Ko-r9p"/>
+                                                        <constraint firstItem="X9U-Yf-pNi" firstAttribute="leading" secondItem="wvf-sw-zz6" secondAttribute="leading" constant="8" id="seu-ry-XYZ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wGG-Ig-Cvn" secondAttribute="bottom" id="D8e-gi-LKC"/>
+                                            <constraint firstAttribute="trailing" secondItem="wvf-sw-zz6" secondAttribute="trailing" id="Dde-nl-RVv"/>
+                                            <constraint firstAttribute="trailing" secondItem="wGG-Ig-Cvn" secondAttribute="trailing" id="GfN-l8-f6l"/>
+                                            <constraint firstItem="wGG-Ig-Cvn" firstAttribute="leading" secondItem="oeZ-K9-Ppi" secondAttribute="leading" id="HC9-Qv-U4R"/>
+                                            <constraint firstItem="wGG-Ig-Cvn" firstAttribute="top" secondItem="oeZ-K9-Ppi" secondAttribute="top" id="Rns-jH-4kO"/>
+                                            <constraint firstAttribute="bottom" secondItem="wvf-sw-zz6" secondAttribute="bottom" id="TZ9-KD-JKN"/>
+                                            <constraint firstItem="wvf-sw-zz6" firstAttribute="leading" secondItem="oeZ-K9-Ppi" secondAttribute="leading" id="Vus-Qw-Bey"/>
+                                            <constraint firstItem="wvf-sw-zz6" firstAttribute="top" secondItem="oeZ-K9-Ppi" secondAttribute="top" id="gq3-IH-QMi"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="editButton" destination="X9U-Yf-pNi" id="Mtl-GW-XxC"/>
+                                            <outlet property="imageTitle" destination="wGG-Ig-Cvn" id="IIY-uJ-Ytp"/>
+                                            <outlet property="mainTitle" destination="3Tr-yS-jwO" id="hmz-hN-dZV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EDS-TF-oSj" customClass="AddingCollectionCell" customModule="Series" customModuleProvider="target">
+                                        <rect key="frame" x="281" y="12" width="271" height="505"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="271" height="505"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qwn-a7-5Iv">
+                                                    <rect key="frame" x="8" y="40" width="255" height="465"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ekL-BW-0cy">
+                                                    <rect key="frame" x="8" y="8" width="255" height="29"/>
+                                                    <segments>
+                                                        <segment title="Bold"/>
+                                                        <segment title="Regular"/>
+                                                        <segment title="Tt"/>
+                                                        <segment title="Italic"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="qwn-a7-5Iv" secondAttribute="bottom" id="4Za-Jy-gHW"/>
+                                            <constraint firstItem="ekL-BW-0cy" firstAttribute="leading" secondItem="EDS-TF-oSj" secondAttribute="leadingMargin" id="KrS-2j-m1J"/>
+                                            <constraint firstAttribute="trailing" secondItem="qwn-a7-5Iv" secondAttribute="trailing" constant="8" id="ZEL-Xf-kKa"/>
+                                            <constraint firstItem="qwn-a7-5Iv" firstAttribute="top" secondItem="ekL-BW-0cy" secondAttribute="bottom" constant="4" id="fNB-vj-lTc"/>
+                                            <constraint firstItem="ekL-BW-0cy" firstAttribute="top" secondItem="EDS-TF-oSj" secondAttribute="topMargin" id="k5b-r1-SpE"/>
+                                            <constraint firstItem="ekL-BW-0cy" firstAttribute="trailing" secondItem="EDS-TF-oSj" secondAttribute="trailingMargin" id="pjf-0p-7mV"/>
+                                            <constraint firstItem="qwn-a7-5Iv" firstAttribute="leading" secondItem="EDS-TF-oSj" secondAttribute="leading" constant="8" id="wQC-Rz-1HU"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="segmentTextControl" destination="ekL-BW-0cy" id="wJV-Mf-Px2"/>
+                                            <outlet property="storyTextView" destination="qwn-a7-5Iv" id="X0o-eb-vSG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gVL-It-Xga" firstAttribute="top" secondItem="5tB-Ev-zj7" secondAttribute="bottom" constant="51" id="0IC-f7-Atc"/>
-                            <constraint firstItem="4sd-e8-xJb" firstAttribute="centerX" secondItem="UCm-Mi-EiS" secondAttribute="centerX" id="4HF-qg-dWN"/>
-                            <constraint firstItem="Ori-vO-to3" firstAttribute="top" secondItem="4sd-e8-xJb" secondAttribute="bottom" constant="319" id="BNY-zU-KAW"/>
-                            <constraint firstItem="gVL-It-Xga" firstAttribute="leading" secondItem="UCm-Mi-EiS" secondAttribute="leadingMargin" constant="148" id="EQV-e0-ayo"/>
-                            <constraint firstItem="gVL-It-Xga" firstAttribute="centerX" secondItem="5tB-Ev-zj7" secondAttribute="centerX" id="K1E-cH-407"/>
-                            <constraint firstItem="5tB-Ev-zj7" firstAttribute="leading" secondItem="UCm-Mi-EiS" secondAttribute="leadingMargin" constant="42" id="Ldt-Hf-Cac"/>
-                            <constraint firstItem="4sd-e8-xJb" firstAttribute="top" secondItem="CDq-K0-v5e" secondAttribute="bottom" constant="298" id="Q0c-WU-eyL"/>
-                            <constraint firstItem="4sd-e8-xJb" firstAttribute="centerX" secondItem="5tB-Ev-zj7" secondAttribute="centerX" id="VQ2-de-uyg"/>
-                            <constraint firstItem="glY-dj-mXa" firstAttribute="centerX" secondItem="4sd-e8-xJb" secondAttribute="centerX" id="WNg-NI-ANk"/>
-                            <constraint firstItem="glY-dj-mXa" firstAttribute="top" secondItem="CDq-K0-v5e" secondAttribute="bottom" constant="58" id="aeM-IN-Sj7"/>
-                            <constraint firstItem="5tB-Ev-zj7" firstAttribute="top" secondItem="4sd-e8-xJb" secondAttribute="bottom" constant="8" symbolic="YES" id="i24-Vh-qHG"/>
-                            <constraint firstItem="glY-dj-mXa" firstAttribute="leading" secondItem="UCm-Mi-EiS" secondAttribute="leadingMargin" constant="51" id="iJA-N0-zVj"/>
-                            <constraint firstItem="4sd-e8-xJb" firstAttribute="top" secondItem="glY-dj-mXa" secondAttribute="bottom" constant="72" id="v8j-ll-cGu"/>
+                            <constraint firstItem="m7L-06-rrr" firstAttribute="top" secondItem="CDq-K0-v5e" secondAttribute="bottom" constant="8" id="Vz2-Pk-Qfn"/>
+                            <constraint firstItem="x4z-YQ-Rmn" firstAttribute="top" secondItem="CDq-K0-v5e" secondAttribute="bottom" constant="63" id="WsY-di-r0s"/>
+                            <constraint firstItem="x4z-YQ-Rmn" firstAttribute="leading" secondItem="UCm-Mi-EiS" secondAttribute="leading" id="axT-Aa-buf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m7L-06-rrr" secondAttribute="trailing" id="joN-Jg-Xfv"/>
+                            <constraint firstItem="Ori-vO-to3" firstAttribute="top" secondItem="x4z-YQ-Rmn" secondAttribute="bottom" constant="56" id="mCm-Z0-8Yv"/>
+                            <constraint firstAttribute="trailing" secondItem="x4z-YQ-Rmn" secondAttribute="trailing" id="snr-8m-UdN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="glY-dj-mXa" id="XQs-ON-ZkP"/>
-                        <outlet property="progressView" destination="5tB-Ev-zj7" id="sL5-bz-3Vb"/>
-                        <outlet property="uploadButton" destination="4sd-e8-xJb" id="22n-vu-yZN"/>
+                        <outlet property="addCollectionView" destination="x4z-YQ-Rmn" id="w57-Nl-m0t"/>
+                        <outlet property="publishButton" destination="m7L-06-rrr" id="Ki7-r0-ner"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NY5-ix-P4O" userLabel="First Responder" sceneMemberID="firstResponder"/>

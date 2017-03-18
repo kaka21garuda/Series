@@ -23,26 +23,38 @@ class AddViewController: UIViewController {
     // Example of content
     var currPost = ["Tittle", "why not there is the nnnd ksksks lalalalal kdkdkdkdk kadsjfakl;", "whhhhhhalalallala"] as [Any]
     
-    //MARK: - Outlets and Actions
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var uploadButton: UIButton!
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBAction func uploadAction(_ sender: Any) {
+    @IBOutlet weak var addCollectionView: UICollectionView!
+    
+    @IBOutlet weak var publishButton: UIButton!
+    
+    @IBAction func publishAction(_ sender: UIButton) {
         
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.sourceType = .photoLibrary
-//        imagePicker.mediaTypes = [kUTTypeImage as String]
-//        imagePicker.delegate = self
-//        present(imagePicker, animated: true, completion: nil)
-
         
-        makeObjectPost(title: "Third Post", imageTitle: #imageLiteral(resourceName: "william-iven-19844"), content: makeContentDict(contentPost: currPost), like: 4)
+        
     }
     
-   
-    @IBAction func readAction(_ sender: UIButton) {
-        read()
-    }
+    
+    
+    //MARK: - Outlets and Actions
+//    @IBOutlet weak var imageView: UIImageView!
+//    @IBOutlet weak var uploadButton: UIButton!
+//    @IBOutlet weak var progressView: UIProgressView!
+//    @IBAction func uploadAction(_ sender: Any) {
+//        
+////        let imagePicker = UIImagePickerController()
+////        imagePicker.sourceType = .photoLibrary
+////        imagePicker.mediaTypes = [kUTTypeImage as String]
+////        imagePicker.delegate = self
+////        present(imagePicker, animated: true, completion: nil)
+//
+//        
+//        makeObjectPost(title: "Third Post", imageTitle: #imageLiteral(resourceName: "william-iven-19844"), content: makeContentDict(contentPost: currPost), like: 4)
+//    }
+//    
+//   
+//    @IBAction func readAction(_ sender: UIButton) {
+//        read()
+//    }
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {

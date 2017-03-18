@@ -80,30 +80,35 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             return cell
         } else {
             let newTopicCell = collectionView.dequeueReusableCell(withReuseIdentifier: "newTopicCell", for: indexPath) as! NewTopicCell
+            newTopicCell.loveImage.image = #imageLiteral(resourceName: "heart")
+            newTopicCell.titleLabel.text = "label"
             return newTopicCell
         }
         
     }
     
+    //MARK: - Cell Sizing and Spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //
+        //Set the size of each cell
         
-        
+        if collectionView == newCollectionView {
+            return CGSize(width: (view.frame.width / 2) - 20, height: (view.frame.height / 8) + 52)
+        } else {
+            return CGSize(width: (view.bounds.width / 2) + 80, height: (view.bounds.height / 2) - 40)
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        //
+        //Set the spacing between each cell
+        
+        if collectionView == newCollectionView {
+            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        } else {
+            return UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 20)
+        }
         
         
         
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 250, height: view.frame.height - 55)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsetsMake(0, 14, 0, 14)
-//    }
 }

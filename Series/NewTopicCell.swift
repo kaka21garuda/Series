@@ -22,12 +22,12 @@ class NewTopicCell: UICollectionViewCell {
         super.layoutSubviews()
         
         // make the shadow effect
-        self.layer.cornerRadius = 3.0
-        layer.shadowRadius = 1.0
-        layer.shadowOpacity = 0.8
-        layer.shadowOffset = CGSize(width: 5, height: 5)
-        
-        self.clipsToBounds = false
+//        self.layer.cornerRadius = 3.0
+//        layer.shadowRadius = 1.0
+//        layer.shadowOpacity = 0.8
+//        layer.shadowOffset = CGSize(width: 5, height: 5)
+//        
+//        self.clipsToBounds = false
         
     }
 }
